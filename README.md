@@ -5,7 +5,17 @@
 For `SenseVoice`, visit [SenseVoice repo](https://github.com/FunAudioLLM/SenseVoice) and [SenseVoice space](https://www.modelscope.cn/studios/iic/SenseVoice).
 
 ## Install
-
+use google
+https://colab.research.google.com/
+``` sh
+!git clone --recursive https://github.com/sunforwork/SUNvoiceclone.git
+%cd CosyVoice
+!pip install -r requirements.txt
+!mkdir -p pretrained_models
+!git clone https://www.modelscope.cn/iic/CosyVoice-300M.git pretrained_models/CosyVoice-300M
+!export PYTHONPATH=third_party/Matcha-TTS
+!python3 webui_colab.py
+```
 **Clone and install**
 
 - Clone the repo
