@@ -140,9 +140,8 @@ def generate_audio(tts_text, mode_checkbox_group, sft_dropdown, prompt_text, pro
 
 def main():
     with gr.Blocks() as demo:
-        gr.Markdown("# <center>🌊💕🎶 [CosyVoice](https://www.bilibili.com/video/BV1vz421q7ir/) 3秒音频，开启最强声音复刻</center>")
-        gr.Markdown("## <center>🌟 只需3秒参考音频，一键开启超拟人真实声音复刻，支持中日英韩粤语，无需任何训练！</center>")
-        gr.Markdown("### <center>🤗 更多精彩，尽在[滔滔AI](https://www.talktalkai.com/)；滔滔AI，为爱滔滔！💕</center>")
+        gr.Markdown("# <center>SUN复制声音控制面板，中日英韩粤语支持</center>")
+      
 
         with gr.Row():
             tts_text = gr.Textbox(label="请填写您希望声音复刻的文本内容", lines=3, placeholder="想说却还没说的，还很多...")
@@ -168,13 +167,7 @@ def main():
                               inputs=[tts_text, mode_checkbox_group, sft_dropdown, prompt_text, prompt_wav_upload, prompt_wav_record, instruct_text, seed],
                               outputs=[audio_output])
         mode_checkbox_group.change(fn=change_instruction, inputs=[mode_checkbox_group], outputs=[instruction_text])
-        gr.Markdown("### <center>注意❗：请不要生成会对个人以及组织造成侵害的内容，此程序仅供科研、学习及个人娱乐使用。请自觉合规使用此程序，程序开发者不负有任何责任。</center>")
-        gr.HTML('''
-            <div class="footer">
-                        <p>🌊🏞️🎶 - 江水东流急，滔滔无尽声。 明·顾璘
-                        </p>
-            </div>
-        ''')
+       
     demo.queue()
     demo.launch(share=True, show_error=True)
 
